@@ -1,0 +1,13 @@
+{
+    "name": "@ide-c/ui",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Shared UI components for IDE-C",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "echo 'TODO: build ui package'",
+        "dev": "echo 'TODO: dev mode'",
+        "lint": "echo 'TODO: lint'",
+        "clean": "rimraf dist"
+    }
+}

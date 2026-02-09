@@ -1,0 +1,13 @@
+{
+    "name": "@ide-c/shared",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Shared utilities and types for IDE-C",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "echo 'TODO: build shared package'",
+        "dev": "echo 'TODO: dev mode'",
+        "lint": "echo 'TODO: lint'",
+        "clean": "rimraf dist"
+    }
+}
