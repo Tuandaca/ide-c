@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiPlus, FiFolderOpen } from 'react-icons/fi';
+import { FiPlus, FiFolder } from 'react-icons/fi';
 import { useState } from 'react';
 import './WelcomeScreen.css';
 
@@ -53,7 +53,7 @@ export function WelcomeScreen({ onNewFile, onOpenFile, onDismiss }: WelcomeScree
                         className="welcome-action-btn open-file"
                         onClick={() => handleAction(onOpenFile)}
                     >
-                        <FiFolderOpen className="action-icon" />
+                        <FiFolder className="action-icon" />
                         <span>Open File</span>
                     </button>
                 </div>

@@ -1,0 +1,107 @@
+.editor-tabs {
+    background: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border-default);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tabs-list {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    gap: 2px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--color-bg-primary);
+    border-right: 1px solid var(--color-border-subtle);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    user-select: none;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.tab:hover {
+    background: var(--color-bg-elevated);
+}
+
+.tab.active {
+    background: var(--color-bg-primary);
+    border-bottom: 2px solid var(--color-neon-primary);
+    box-shadow: inset 0 -2px 0 0 var(--color-neon-primary);
+}
+
+.tab-name {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tab.active .tab-name {
+    color: var(--color-neon-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.dirty-indicator {
+    color: var(--color-neon-bright);
+    font-size: 10px;
+    line-height: 1;
+}
+
+.tab-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    opacity: 0;
+}
+
+.tab:hover .tab-close-btn {
+    opacity: 1;
+}
+
+.tab-close-btn:hover {
+    background: var(--color-bg-elevated);
+    color: var(--color-neon-primary);
+}
+
+.tab.active .tab-close-btn {
+    opacity: 1;
+}
+
+/* Scrollbar for tabs overflow */
+.editor-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.editor-tabs::-webkit-scrollbar-track {
+    background: var(--color-bg-surface);
+}
+
+.editor-tabs::-webkit-scrollbar-thumb {
+    background: var(--color-border-default);
+    border-radius: 2px;
+}
+
+.editor-tabs::-webkit-scrollbar-thumb:hover {
+    background: var(--color-neon-dim);
+}

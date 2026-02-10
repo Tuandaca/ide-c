@@ -57,6 +57,11 @@
     flex-direction: column;
 }
 
+.editor-content {
+    flex: 1;
+    overflow: hidden;
+}
+
 .right-panels {
     background: var(--color-bg-surface);
     border-left: 1px solid var(--color-border-default);

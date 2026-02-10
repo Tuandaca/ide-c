@@ -1,7 +1,9 @@
+import { EditorTabs } from '../EditorTabs';
+import { CodeEditor } from '../CodeEditor';
 import './Layout.css';
 
 interface LayoutProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
@@ -21,7 +23,10 @@ export function Layout({ children }: LayoutProps) {
                 </aside>
 
                 <main className="editor-area">
-                    {children}
+                    <EditorTabs />
+                    <div className="editor-content">
+                        {children || <CodeEditor />}
+                    </div>
                 </main>
 
                 <aside className="right-panels">
