@@ -3,11 +3,27 @@
     "version": "0.0.1",
     "private": true,
     "description": "Design tokens and CSS variables for IDE-C",
-    "main": "src/index.ts",
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./tokens.css": "./src/tokens.css"
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "build": "echo 'TODO: build theme package'",
-        "dev": "echo 'TODO: dev mode'",
+        "build": "tsup",
+        "dev": "tsup --watch",
         "lint": "echo 'TODO: lint'",
         "clean": "rimraf dist"
+    },
+    "devDependencies": {
+        "tsup": "^8.3.5"
     }
 }

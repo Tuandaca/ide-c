@@ -10,6 +10,9 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@ide-c/theme": "workspace:*",
+    "@ide-c/shared": "workspace:*",
+    "@ide-c/ui": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "@tauri-apps/api": "^2",

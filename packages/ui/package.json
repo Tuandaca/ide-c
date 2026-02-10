@@ -3,11 +3,38 @@
     "version": "0.0.1",
     "private": true,
     "description": "Shared UI components for IDE-C",
-    "main": "src/index.ts",
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "build": "echo 'TODO: build ui package'",
-        "dev": "echo 'TODO: dev mode'",
+        "build": "tsup",
+        "dev": "tsup --watch",
         "lint": "echo 'TODO: lint'",
         "clean": "rimraf dist"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "dependencies": {
+        "@ide-c/theme": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/react": "^19.1.8",
+        "@types/react-dom": "^19.1.6",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "tsup": "^8.3.5",
+        "typescript": "^5.9.3"
     }
 }

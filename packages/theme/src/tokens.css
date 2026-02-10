@@ -1,0 +1,86 @@
+:root {
+  /* Background Colors */
+  --color-bg-primary: #1e1e1e;
+  --color-bg-secondary: #252526;
+  --color-bg-tertiary: #2d2d30;
+  --color-bg-elevated: #3e3e42;
+  
+  /* Text Colors */
+  --color-text-primary: #cccccc;
+  --color-text-secondary: #969696;
+  --color-text-muted: #6a6a6a;
+  --color-text-inverse: #1e1e1e;
+  
+  /* Accent Colors */
+  --color-accent-primary: #007acc;
+  --color-accent-hover: #1c8dd9;
+  --color-accent-active: #005a9e;
+  
+  /* Semantic Colors */
+  --color-success: #89d185;
+  --color-warning: #d7ba7d;
+  --color-error: #f48771;
+  --color-info: #75beff;
+  
+  /* Border Colors */
+  --color-border-default: #3e3e42;
+  --color-border-subtle: #2d2d30;
+  --color-border-focus: #007acc;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-md: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 16px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  
+  --line-height-tight: 1.3;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+  
+  /* Border Radius */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+}
+
+/* Light theme (optional, future) */
+[data-theme="light"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f3f3f3;
+  --color-bg-tertiary: #e8e8e8;
+  --color-text-primary: #1e1e1e;
+  --color-text-secondary: #616161;
+  --color-border-default: #d4d4d4;
+}
