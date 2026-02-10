@@ -109,7 +109,7 @@ ide-c/
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/ide-c.git
+git clone https://github.com/Tuandaca/ide-c.git
 cd ide-c
 
 # Install dependencies
