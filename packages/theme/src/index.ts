@@ -6,7 +6,7 @@ export const theme = {
     bg: {
       primary: 'var(--color-bg-primary)',
       secondary: 'var(--color-bg-secondary)',
-      tertiary: 'var(--color-bg-tertiary)',
+      surface: 'var(--color-bg-surface)',
       elevated: 'var(--color-bg-elevated)',
     },
     text: {
@@ -14,6 +14,11 @@ export const theme = {
       secondary: 'var(--color-text-secondary)',
       muted: 'var(--color-text-muted)',
       inverse: 'var(--color-text-inverse)',
+    },
+    neon: {
+      primary: 'var(--color-neon-primary)',
+      bright: 'var(--color-neon-bright)',
+      dim: 'var(--color-neon-dim)',
     },
     accent: {
       primary: 'var(--color-accent-primary)',
@@ -48,7 +53,25 @@ export const theme = {
     sm: 'var(--radius-sm)',
     md: 'var(--radius-md)',
     lg: 'var(--radius-lg)',
+    xl: 'var(--radius-xl)',
+  },
+  glow: {
+    small: 'var(--glow-small)',
+    medium: 'var(--glow-medium)',
+    large: 'var(--glow-large)',
   },
 } as const;
 
 export type Theme = typeof theme;
+
+// Theme utilities
+export type ThemeVariant = 'green' | 'red' | 'blue' | 'violet';
+
+export function setTheme(theme: ThemeVariant) {
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+export function getTheme(): ThemeVariant {
+  const current = document.documentElement.getAttribute('data-theme');
+  return (current as ThemeVariant) || 'green';
+}
