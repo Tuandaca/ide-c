@@ -66,12 +66,18 @@ ide-c/
 - Xây dựng shared packages (theme, shared, ui)
 - Tích hợp design system và build pipeline
 
-#### 🚀 Phase 4: IDE Shell (Đang thực hiện)
+#### ✅ Phase 4: IDE Shell (Hoàn thành)
 - Layout chuyên nghiệp (sidebar, editor, menu, status bar)
 - Tích hợp Monaco Editor với C/C++ syntax highlighting
-- File explorer với tree view
-- Tab management cho multiple files
-- Tauri file system integration
+- File explorer với tree view & native file dialogs
+- Tab management & file system integration
+- Menu bar với đầy đủ chức năng
+
+#### 🚀 Phase 5: Compiler Integration (Tiếp theo)
+- Detect C/C++ Compiler (GCC/Clang/MSVC)
+- Build system integration
+- Terminal integration
+- Run features
 
 #### 📋 Phase 5-6: Planned
 - C/C++ Compiler integration (GCC/Clang)

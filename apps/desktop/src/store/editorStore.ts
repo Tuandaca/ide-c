@@ -17,8 +17,11 @@ interface EditorStore {
     // Tab Management
     openTab: (tab: Omit<EditorTab, 'id' | 'isDirty'>) => void;
     closeTab: (tabId: string) => void;
+    closeOtherTabs: (tabId: string) => void;
+    closeAllTabs: () => void;
     setActiveTab: (tabId: string) => void;
     updateTabContent: (tabId: string, content: string) => void;
+    saveTab: (tabId: string) => void;
 
     // Helpers
     getActiveTab: () => EditorTab | null;
@@ -84,6 +87,29 @@ export const useEditorStore = create<EditorStore>()(
                     tab.isDirty = true;
                 }
             });
+        },
+
+        saveTab: (tabId) => {
+            set((state) => {
+                const tab = state.tabs.find(t => t.id === tabId);
+                if (tab) {
+                    tab.isDirty = false;
+                }
+            });
+        },
+
+        closeOtherTabs: (tabId) => {
+            set((state) => {
+                const tabToKeep = state.tabs.find(t => t.id === tabId);
+                if (tabToKeep) {
+                    state.tabs = [tabToKeep];
+                    state.activeTabId = tabId;
+                }
+            });
+        },
+
+        closeAllTabs: () => {
+            set({ tabs: [], activeTabId: null });
         },
 
         getActiveTab: () => {

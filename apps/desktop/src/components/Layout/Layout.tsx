@@ -1,3 +1,5 @@
+import { FileExplorer } from '../FileExplorer/FileExplorer';
+import { MenuBar } from '../MenuBar/MenuBar';
 import { EditorTabs } from '../EditorTabs';
 import { CodeEditor } from '../CodeEditor';
 import './Layout.css';
@@ -9,17 +11,11 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
     return (
         <div className="ide-layout">
-            <div className="menu-bar">
-                {/* MenuBar component will go here */}
-                <div className="menu-items">
-                    <span className="app-logo">C++ IDE</span>
-                </div>
-            </div>
+            <MenuBar />
 
             <div className="layout-body">
                 <aside className="sidebar">
-                    {/* Sidebar component will go here */}
-                    <div className="sidebar-placeholder">Sidebar</div>
+                    <FileExplorer />
                 </aside>
 
                 <main className="editor-area">
