@@ -8,6 +8,16 @@ const host = process.env.TAURI_DEV_HOST;
 export default defineConfig(async () => ({
   plugins: [react()],
 
+  // Resolve xterm from desktop's node_modules (not from @ide-c/ui's source path)
+  // Required because @ide-c/ui exports source directly without building
+  resolve: {
+    dedupe: ['xterm', 'xterm-addon-fit'],
+  },
+
+  optimizeDeps: {
+    include: ['xterm', 'xterm-addon-fit'],
+  },
+
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
   // 1. prevent Vite from obscuring rust errors

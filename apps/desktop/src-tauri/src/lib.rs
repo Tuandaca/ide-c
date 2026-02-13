@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use std::fs;
-use std::path::{Path, PathBuf};
+
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FileEntry {
@@ -92,8 +92,7 @@ fn read_dir_impl(path: &str, current_depth: usize, max_depth: usize) -> Result<V
 
 /// Open native file picker dialog
 #[tauri::command]
-async fn open_file_dialog(app: tauri::AppHandle) -> Result<Option<String>, String> {
-    use tauri::Manager;
+async fn open_file_dialog(_app: tauri::AppHandle) -> Result<Option<String>, String> {
     
     let file_path = tauri::async_runtime::spawn(async move {
         rfd::AsyncFileDialog::new()
@@ -110,8 +109,7 @@ async fn open_file_dialog(app: tauri::AppHandle) -> Result<Option<String>, Strin
 
 /// Open native folder picker dialog
 #[tauri::command]
-async fn open_folder_dialog(app: tauri::AppHandle) -> Result<Option<String>, String> {
-    use tauri::Manager;
+async fn open_folder_dialog(_app: tauri::AppHandle) -> Result<Option<String>, String> {
     
     let folder_path = tauri::async_runtime::spawn(async move {
         rfd::AsyncFileDialog::new()
@@ -126,8 +124,7 @@ async fn open_folder_dialog(app: tauri::AppHandle) -> Result<Option<String>, Str
 
 /// Open native save file dialog
 #[tauri::command]
-async fn save_file_dialog(app: tauri::AppHandle, default_name: Option<String>) -> Result<Option<String>, String> {
-    use tauri::Manager;
+async fn save_file_dialog(_app: tauri::AppHandle, default_name: Option<String>) -> Result<Option<String>, String> {
     
     let file_path = tauri::async_runtime::spawn(async move {
         let mut dialog = rfd::AsyncFileDialog::new()
