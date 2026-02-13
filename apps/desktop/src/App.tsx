@@ -3,6 +3,7 @@ import { WelcomeScreen } from './components/WelcomeScreen';
 import { Layout } from './components/Layout';
 import { useThemeStore } from './store/themeStore';
 import { useEditorStore } from './store/editorStore';
+import { useCompilerStore } from './store/compilerStore';
 import './App.css';
 
 // Demo C code for testing
@@ -24,11 +25,21 @@ int main() {
 function App() {
   const { showWelcomeScreen, dismissWelcomeScreen, currentTheme, setTheme } = useThemeStore();
   const { openTab } = useEditorStore();
+  const { fetchCompilers } = useCompilerStore();
 
   // Apply theme on mount and when it changes
   useEffect(() => {
     setTheme(currentTheme);
   }, [currentTheme, setTheme]);
+
+  // Fetch compilers on mount
+  useEffect(() => {
+    console.log('Fetching compilers...');
+    fetchCompilers().then(() => {
+      const store = useCompilerStore.getState();
+      console.log('Detected Compilers:', store.compilers);
+    });
+  }, [fetchCompilers]);
 
   const handleNewFile = () => {
     console.log('Creating new file...');

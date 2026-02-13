@@ -3,8 +3,6 @@ import './components/Button/Button.css';
 import './components/Input/Input.css';
 
 // Export components
-export { Button } from './components/Button/Button';
-export type { ButtonProps } from './components/Button/Button';
-
-export { Input } from './components/Input/Input';
-export type { InputProps } from './components/Input/Input';
+export { Button, type ButtonProps } from './components/Button/Button';
+export { Input, type InputProps } from './components/Input/Input';
+export { Terminal, type TerminalRef } from './components/Terminal/Terminal';

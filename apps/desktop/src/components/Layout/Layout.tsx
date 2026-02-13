@@ -4,6 +4,8 @@ import { EditorTabs } from '../EditorTabs';
 import { CodeEditor } from '../CodeEditor';
 import './Layout.css';
 
+import { TerminalPanel } from '../TerminalPanel/TerminalPanel';
+
 interface LayoutProps {
     children?: React.ReactNode;
 }
@@ -32,8 +34,7 @@ export function Layout({ children }: LayoutProps) {
             </div>
 
             <div className="bottom-panel">
-                {/* Bottom panel component will go here */}
-                <div className="bottom-placeholder">Bottom Panel</div>
+                <TerminalPanel />
             </div>
 
             <div className="status-bar">

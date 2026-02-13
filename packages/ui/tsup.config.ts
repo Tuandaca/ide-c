@@ -7,7 +7,9 @@ export default defineConfig({
     clean: true,
     external: ['react', 'react-dom'],
     sourcemap: true,
+    // Add these to prevent dts errors with xterm css
+    noExternal: ['xterm-addon-fit'],
     loader: {
-        '.css': 'css',
+        '.css': 'local-css',
     },
 });

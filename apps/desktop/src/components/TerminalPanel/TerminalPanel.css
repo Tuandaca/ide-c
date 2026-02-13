@@ -1,0 +1,48 @@
+.terminal-panel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+}
+
+.terminal-header {
+    display: flex;
+    height: 35px;
+    background-color: #252526;
+    border-bottom: 1px solid #333;
+    padding-left: 10px;
+}
+
+.terminal-tab {
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #969696;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-top: 1px solid transparent;
+    /* Prepare for active border */
+}
+
+.terminal-tab:hover {
+    color: #e0e0e0;
+}
+
+.terminal-tab.active {
+    color: #ffffff;
+    border-top: 1px solid #007fd4;
+    /* VS Code blue */
+    background-color: #1e1e1e;
+}
+
+.terminal-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    padding: 4px 0 0 4px;
+    /* Slight padding */
+}

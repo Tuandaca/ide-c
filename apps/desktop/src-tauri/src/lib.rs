@@ -147,6 +147,8 @@ async fn save_file_dialog(app: tauri::AppHandle, default_name: Option<String>) -
     Ok(file_path.map(|f| f.path().to_string_lossy().to_string()))
 }
 
+mod services;
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -158,6 +160,7 @@ pub fn run() {
             open_file_dialog,
             open_folder_dialog,
             save_file_dialog,
+            services::compiler::get_compilers
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
