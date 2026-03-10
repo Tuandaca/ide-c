@@ -157,7 +157,9 @@ pub fn run() {
             open_file_dialog,
             open_folder_dialog,
             save_file_dialog,
-            services::compiler::get_compilers
+            services::compiler::get_compilers,
+            services::build::compile_file,
+            services::build::run_binary
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

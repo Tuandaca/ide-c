@@ -1,0 +1,148 @@
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 12px;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border-default);
+    min-height: 36px;
+    gap: 8px;
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-ui);
+    cursor: pointer;
+    transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+    color: var(--color-text-primary);
+    background: transparent;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+    background: var(--color-bg-hover);
+}
+
+.toolbar-btn:disabled,
+.toolbar-btn.is-busy {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.toolbar-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Run button */
+.toolbar-btn.run-btn:hover:not(:disabled) {
+    color: #4ec957;
+}
+
+/* Build button */
+.toolbar-btn.build-btn:hover:not(:disabled) {
+    color: var(--color-neon-primary);
+}
+
+/* Clear button */
+.toolbar-btn.clear-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.toolbar-btn.clear-btn:hover:not(:disabled) {
+    color: var(--color-text-primary);
+}
+
+/* Separator */
+.toolbar-separator {
+    width: 1px;
+    height: 20px;
+    background: var(--color-border-default);
+    margin: 0 4px;
+}
+
+/* Compiler selector */
+.compiler-select {
+    font-size: var(--font-size-xs, 11px);
+    font-family: var(--font-ui);
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+    outline: none;
+    max-width: 180px;
+}
+
+.compiler-select:focus {
+    border-color: var(--color-neon-primary);
+}
+
+.compiler-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status indicator */
+.toolbar-status {
+    font-size: var(--font-size-sm);
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toolbar-status--saving,
+.toolbar-status--compiling,
+.toolbar-status--running {
+    color: var(--color-neon-primary);
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+.toolbar-status--success {
+    color: #4ec957;
+}
+
+.toolbar-status--error {
+    color: #f14c4c;
+}
+
+/* Spinner */
+.spinner {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

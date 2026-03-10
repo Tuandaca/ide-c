@@ -74,6 +74,25 @@
     padding: 0 16px;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
+    transition: background 0.3s ease;
+}
+
+.status-bar.status-busy {
+    background: var(--color-neon-primary);
+    animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+.status-bar.status-success {
+    background: #2ea043;
+}
+
+.status-bar.status-error {
+    background: #d1242f;
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 /* Scrollbar Styling */
